@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Freaky Fashion</title>
+
+  <link
+    rel="stylesheet"
+    href="/stylesheets/style.css">
+
+</head>
+
+<body>
+
+  <%- include("partials/header") %>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-text">
+
+        <h1>Ny kollektion ute nu</h1>
+
+        <p>
+          Utforska våra mest populära plagg och hitta din nya favorit.
+          Stil, komfort och kvalitet i varje detalj.
+        </p>
+
+      </div>
+
+      <div class="hero-image-wrapper">
+
+        <img
+          src="/images/Hero.png"
+          alt="Ny kollektion"
+          class="hero-image">
+
+      </div>
+
+    </section>
+
+    <section class="spots">
+
+      <a href="#" class="spot">
+
+        <img
+          src="/images/nyheter.png"
+          alt="Nyheter"
+          class="spot-image">
+
+        <span>Nyheter</span>
+
+      </a>
+
+      <a href="#" class="spot">
+
+        <img
+          src="/images/Bastsaljare.jpg"
+          alt="Bästsäljare"
+          class="spot-image">
+
+        <span>Bästsäljare</span>
+
+      </a>
+
+      <a href="#" class="spot">
+
+        <img
+          src="/images/kampanj.png"
+          alt="Kampanj"
+          class="spot-image">
+
+        <span>Kampanj</span>
+
+      </a>
+
+    </section>
+
+    <section class="products">
+
+      <h2>Populära Produkter</h2>
+
+      <%- include("partials/product-grid", { products }) %>
+
+    </section>
+
+    <section class="info-row">
+
+      <div class="info-item">
+
+        <span class="info-icon">🌍</span>
+
+        <span>Gratis frakt och returer</span>
+
+      </div>
+
+      <div class="info-item">
+
+        <span class="info-icon">✈</span>
+
+        <span>Expressfrakt</span>
+
+      </div>
+
+      <div class="info-item">
+
+        <span class="info-icon">🛡</span>
+
+        <span>Säkra betalningar</span>
+
+      </div>
+
+      <div class="info-item">
+
+        <span class="info-icon">🙂</span>
+
+        <span>Nyheter varje dag</span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <%- include("partials/footer") %>
+
+</body>
+
+</html>

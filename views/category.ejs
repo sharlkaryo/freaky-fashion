@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= category.name %> | Freaky Fashion</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <%- include("partials/header") %>
+
+  <main>
+
+    <section class="products">
+
+      <h2><%= category.name %></h2>
+
+      <%- include("partials/product-grid", { products }) %>
+
+    </section>
+
+    <section class="info-row">
+
+      <div class="info-item">
+        <span class="info-icon">🌍</span>
+        <span>Gratis frakt och returer</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">✈</span>
+        <span>Expressfrakt</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">🛡</span>
+        <span>Säkra betalningar</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">🙂</span>
+        <span>Nyheter varje dag</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <%- include("partials/footer") %>
+
+</body>
+
+</html>

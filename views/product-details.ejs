@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= product.name %> | Freaky Fashion</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <%- include("partials/header") %>
+
+  <main class="product-detail-page">
+
+    <section class="product-detail-layout">
+
+      <div class="product-detail-image-wrapper">
+        <img
+          src="<%= product.image %>"
+          alt="<%= product.name %>"
+          class="product-detail-image">
+      </div>
+
+      <div class="product-detail-info">
+        <h1><%= product.name %></h1>
+
+        <p class="brand">
+          <%= product.brand %>
+        </p>
+
+        <p class="product-detail-description">
+          <%= product.description %>
+        </p>
+
+        <p class="product-detail-price">
+          <%= product.price %> SEK
+        </p>
+
+        <button class="buy-button">
+          Lägg i varukorg
+        </button>
+      </div>
+
+    </section>
+
+    <section class="related-products products">
+      <h2>Liknande produkter</h2>
+
+      <div class="product-grid">
+        <% relatedProducts.forEach(product => { %>
+          <%- include("partials/product-card", { product }) %>
+        <% }) %>
+      </div>
+    </section>
+
+    <section class="info-row">
+
+      <div class="info-item">
+        <span class="info-icon">🌍</span>
+        <span>Gratis frakt och returer</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">✈</span>
+        <span>Expressfrakt</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">🛡</span>
+        <span>Säkra betalningar</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-icon">🙂</span>
+        <span>Nyheter varje dag</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <%- include("partials/footer") %>
+
+</body>
+
+</html>

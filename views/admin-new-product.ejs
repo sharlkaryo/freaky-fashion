@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Administration - Ny produkt</title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+  <main class="admin-page">
+
+    <header class="admin-topbar">
+      <h1>Administration</h1>
+    </header>
+
+    <div class="admin-layout">
+
+      <aside class="admin-sidebar">
+        <nav class="admin-menu">
+          <a href="/admin/products">Produkter</a>
+          <a href="/admin/categories">Kategorier</a>
+        </nav>
+      </aside>
+
+      <section class="admin-content">
+
+        <h2>Ny produkt</h2>
+
+        <form
+          class="admin-form"
+          action="/admin/products/new"
+          method="POST"
+          enctype="multipart/form-data">
+
+          <label for="name">Namn</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ange namn"
+            maxlength="25"
+            required>
+
+          <label for="description">Beskrivning</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Ange beskrivning"
+            required></textarea>
+
+          <label for="image">Bild</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required>
+
+          <label for="brand">Märke</label>
+          <input
+            type="text"
+            id="brand"
+            name="brand"
+            placeholder="Nike"
+            required>
+
+          <label for="sku">SKU</label>
+          <input
+            type="text"
+            id="sku"
+            name="sku"
+            placeholder="ABC123">
+
+          <label for="price">Pris</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="199"
+            required>
+
+          <label for="slug">Slug</label>
+          <input
+            type="text"
+            id="slug"
+            name="slug"
+            placeholder="svart-tshirt"
+            required>
+
+          <label for="category">Kategori</label>
+          <select
+            id="category"
+            name="category"
+            required>
+
+            <option value="">
+              Välj kategori
+            </option>
+
+            <% categories.forEach(category => { %>
+
+              <option value="<%= category.name %>">
+                <%= category.name %>
+              </option>
+
+            <% }) %>
+
+          </select>
+
+          <button type="submit">
+            Lägg till
+          </button>
+
+        </form>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>

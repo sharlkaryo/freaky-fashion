@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Administration - Kategorier</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <main class="admin-page">
+
+    <header class="admin-topbar">
+      <h1>Administration</h1>
+    </header>
+
+    <div class="admin-layout">
+
+      <aside class="admin-sidebar">
+        <nav class="admin-menu">
+          <a href="/admin/products">Produkter</a>
+          <a href="/admin/categories">Kategorier</a>
+        </nav>
+      </aside>
+
+      <section class="admin-content">
+
+        <div class="admin-header-row">
+          <h2>Kategorier</h2>
+
+          <a href="/admin/categories/new" class="admin-button">
+            Ny kategori
+          </a>
+        </div>
+
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Namn</th>
+              <th>Slug</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% categories.forEach(category => { %>
+              <tr>
+                <td><%= category.name %></td>
+                <td><%= category.slug %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+
+      </section>
+
+    </div>
+
+  </main>
+</body>
+</html>
