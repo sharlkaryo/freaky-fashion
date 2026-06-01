@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="admin-page">
+    <header class="admin-topbar">
+      <h1>Administration</h1>
+    </header>
+
+    <main class="admin-layout">
+      <aside class="admin-sidebar">
+        <nav aria-label="Adminmeny">
+          <ul>
+            <li><a href="#">Produkter</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="admin-content">
+        <h2>Ny produkt</h2>
+
+        <form class="admin-form">
+          <label for="name">Namn</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="description">Beskrivning</label>
+          <textarea id="description" name="description" rows="10"></textarea>
+
+          <label for="image">Bild</label>
+          <label for="image" class="file-button">Välj fil</label>
+          <input type="file" id="image" name="image" hidden />
+
+          <label for="sku">SKU</label>
+          <input type="text" id="sku" name="sku" />
+
+          <label for="price">Pris</label>
+          <input type="number" id="price" name="price" />
+
+          <button type="submit">Lägg till</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="admin-footer">
+      <p>© Educado AB</p>
+    </footer>
+  </body>
+</html>
